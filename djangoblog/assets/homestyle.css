@@ -1,3 +1,17 @@
-div {
-    display: block;
+body{
+    background-color: darkturquoise;
+    color:midnightblue;
+}
+
+.loginform,
+.signupform{
+    background-color: #573bf326;
+    border: 2px black solid;
+    width: 500px;
+}
+form .logout-link{
+    width: 100px;
+}
+form label{
+    display:block;
 }

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here. Database
 # python manage.py makemigrations
@@ -10,7 +11,7 @@ class Article(models.Model): # DB Table name
   title = models.CharField(max_length=101)
   body = models.TextField()
   date = models.DateTimeField(auto_now_add=True) # automatically without user input
-
+  author = models.ForeignKey(User, default=None)
 
   def __str__(self): # makes getting self print its own title instead
     return self.title

@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
+<link rel="stylesheet" href="/static/homestyle.css">
 <html>
     <head>
         <meta charset="utf-8">
@@ -9,9 +10,25 @@
         <link ref="stylesheet" href="{% static 'homestyle.css' %}">
     </head>
     <body>
-        
         <div class="wrapper">
-            <h1><a href="{% url 'articles:list' %}">Articles</a></h1>
+            <h1><a href="{% url 'articles:list' %}">Django Blog</a></h1>
+            {% if user.is_authenticated %}
+            <form class="logout-link" action="{% url 'accounts:logout' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" >Logout</button>
+            </form>
+             {% endif %}
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'articles:create' %}">New Article</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
             {% block content %}
             {% endblock %}
         </div>
