@@ -1,0 +1,21 @@
+
+.article { 
+    width: 810px;
+}
+
+.article .articletitle { 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.article .articlebody { 
+    background-color: azure;
+    width: 800px;
+}
+
+.article .articledate { 
+    font-size: 14px;
+    text-align:right;
+    margin-right:12px;
+
+}

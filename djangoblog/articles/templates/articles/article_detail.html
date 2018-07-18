@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/article.css">
+
+<div class="article-detail">
+    <div class="article">
+        <div class="articletitle">
+            {{ article.title }}
+        </div>
+        <div class="articlebody" >
+            {{ article.body }}
+        </div>
+        <div class="articledate" >
+           - {{ article.date }}
+        </div>
+    </div>
+</div>
+{% endblock %}
